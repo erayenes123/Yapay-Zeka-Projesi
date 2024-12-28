@@ -1,0 +1,38 @@
+﻿@model Yapay_Zeka_Projesi_Arayüzü.Models.Hizmetler
+
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Update</h2>
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.Hizmetlerid)
+
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @style = "border-color:white" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Aciklama,5,1, new { @class = "form-control", @style = "border-color:white" })
+
+    <br />
+
+    <label>Buttonda Gösterilecek Yazı</label>
+    @Html.TextBoxFor(x => x.ResimUrl, new { @class = "form-control", @style = "border-color:white" })
+    <br />
+
+    
+
+    <br />
+
+    <button class="btn btn-outline-success">Güncelle</button>
+
+
+
+
+</form>

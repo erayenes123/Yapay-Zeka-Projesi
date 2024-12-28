@@ -1,0 +1,54 @@
+﻿@model Yapay_Zeka_Projesi_Arayüzü.Models.Analizler
+
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Update</h2>
+
+
+<form method="post">
+
+
+    @Html.HiddenFor(x => x.Ornekid)
+
+
+    <label>Ad</label>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @style = "border-color:grey" })
+    <br />
+
+    <label>İçindekiler</label>
+    @Html.TextBoxFor(x => x.ModelIcindekiler, new { @class = "form-control", @style = "border-color:grey" })
+    <br />
+
+    <label>Resim Url</label>
+    @Html.TextAreaFor(x => x.ResimUrl, 5, 1, new { @class = "form-control", @style = "border-color:grey" })
+
+    <br />
+
+    <label>Miktar(gr)</label>
+    @Html.TextBoxFor(x => x.ModelMiktar, new { @class = "form-control", @style = "border-color:grey" })
+    <br />
+    <label>Protein(gr)</label>
+    @Html.TextBoxFor(x => x.ModelProtein, new { @class = "form-control", @style = "border-color:grey" })
+
+
+    <br />
+
+    <label>Karbonhidrat(gr)</label>
+    @Html.TextBoxFor(x => x.ModelKarbonhidrat, new { @class = "form-control", @style = "border-color:grey" })
+
+    <br />
+
+    <label>Kalori(gr)</label>
+    @Html.TextBoxFor(x => x.ModelKalori, new { @class = "form-control", @style = "border-color:grey" })
+
+    <br />
+
+
+
+    <button class="btn btn-outline-success">Güncelle</button>
+
+</form>

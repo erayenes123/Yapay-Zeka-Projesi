@@ -1,0 +1,32 @@
+﻿@model Yapay_Zeka_Projesi_Arayüzü.Models.Anasayfa
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Anasayfa Ekleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="Baslik" style="border-color:white " />
+
+    <br />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" name="Aciklama" style="border-color:white " />
+
+    <br />
+    <label>Buttonda Yazacak Yazı</label>
+    <input type="text" class="form-control" name="ButtonYazi" style="border-color:white " />
+
+    <br />
+    <label>Button Link</label>
+    <input type="text" class="form-control" name="ButtonUrl" style="border-color:white " />
+
+    <br />
+    <button class="btn btn-outline-success">Ekle</button>
+
+</form>
+

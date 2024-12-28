@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="YzprojesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Analizler">
+          <Key>
+            <PropertyRef Name="Ornekid" />
+          </Key>
+          <Property Name="Ornekid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResimUrl" Type="nvarchar(max)" />
+          <Property Name="ModelAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModelResimUrl" Type="nvarchar(max)" />
+          <Property Name="ModelYemekAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModelIcindekiler" Type="nvarchar" MaxLength="150" />
+          <Property Name="ModelMiktar" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ModelProtein" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ModelKarbonhidrat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ModelKalori" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Anasayfa">
+          <Key>
+            <PropertyRef Name="Anasayfaid" />
+          </Key>
+          <Property Name="Anasayfaid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="150" />
+          <Property Name="ButtonYazi" Type="nvarchar" MaxLength="30" />
+          <Property Name="ButtonUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ekip">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResimUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Hizmetler">
+          <Key>
+            <PropertyRef Name="Hizmetlerid" />
+          </Key>
+          <Property Name="Hizmetlerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimUrl" Type="nvarchar(max)" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityContainer Name="YzprojesiModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Analizler" EntityType="Self.Analizler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anasayfa" EntityType="Self.Anasayfa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ekip" EntityType="Self.Ekip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hizmetler" EntityType="Self.Hizmetler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YzprojesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Anasayfa">
+          <Key>
+            <PropertyRef Name="Anasayfaid" />
+          </Key>
+          <Property Name="Anasayfaid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonYazi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="YzprojesiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Anasayfa" EntityType="Self.Anasayfa" />
+          <EntitySet Name="Hizmetler" EntityType="YzprojesiModel.Hizmetler" />
+          <EntitySet Name="Admin" EntityType="YzprojesiModel.Admin" />
+          <EntitySet Name="Ekip" EntityType="YzprojesiModel.Ekip" />
+          <EntitySet Name="Analizler" EntityType="YzprojesiModel.Analizler" />
+        </EntityContainer>
+        <EntityType Name="Hizmetler">
+          <Key>
+            <PropertyRef Name="Hizmetlerid" />
+          </Key>
+          <Property Name="Hizmetlerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ekip">
+          <Key>
+            <PropertyRef Name="KisiId" />
+          </Key>
+          <Property Name="KisiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Analizler">
+          <Key>
+            <PropertyRef Name="Ornekid" />
+          </Key>
+          <Property Name="Ornekid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModelAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModelResimUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModelYemekAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModelIcindekiler" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModelMiktar" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ModelProtein" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ModelKarbonhidrat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ModelKalori" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YzprojesiModelStoreContainer" CdmEntityContainer="YzprojesiEntities">
+          <EntitySetMapping Name="Anasayfa">
+            <EntityTypeMapping TypeName="YzprojesiModel.Anasayfa">
+              <MappingFragment StoreEntitySet="Anasayfa">
+                <ScalarProperty Name="Anasayfaid" ColumnName="Anasayfaid" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="ButtonYazi" ColumnName="ButtonYazi" />
+                <ScalarProperty Name="ButtonUrl" ColumnName="ButtonUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hizmetler">
+            <EntityTypeMapping TypeName="YzprojesiModel.Hizmetler">
+              <MappingFragment StoreEntitySet="Hizmetler">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="ResimUrl" ColumnName="ResimUrl" />
+                <ScalarProperty Name="Hizmetlerid" ColumnName="Hizmetlerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="YzprojesiModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ekip">
+            <EntityTypeMapping TypeName="YzprojesiModel.Ekip">
+              <MappingFragment StoreEntitySet="Ekip">
+                <ScalarProperty Name="ResimUrl" ColumnName="ResimUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="KisiId" ColumnName="KisiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Analizler">
+            <EntityTypeMapping TypeName="YzprojesiModel.Analizler">
+              <MappingFragment StoreEntitySet="Analizler">
+                <ScalarProperty Name="ModelKalori" ColumnName="ModelKalori" />
+                <ScalarProperty Name="ModelKarbonhidrat" ColumnName="ModelKarbonhidrat" />
+                <ScalarProperty Name="ModelProtein" ColumnName="ModelProtein" />
+                <ScalarProperty Name="ModelMiktar" ColumnName="ModelMiktar" />
+                <ScalarProperty Name="ModelIcindekiler" ColumnName="ModelIcindekiler" />
+                <ScalarProperty Name="ModelYemekAdi" ColumnName="ModelYemekAdi" />
+                <ScalarProperty Name="ModelResimUrl" ColumnName="ModelResimUrl" />
+                <ScalarProperty Name="ModelAd" ColumnName="ModelAd" />
+                <ScalarProperty Name="ResimUrl" ColumnName="ResimUrl" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Ornekid" ColumnName="Ornekid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

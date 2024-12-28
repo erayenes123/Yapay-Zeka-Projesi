@@ -1,0 +1,25 @@
+﻿@model List<Yapay_Zeka_Projesi_Arayüzü.Models.Hizmetler>
+
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">hİZMETLERİMİZ</h2>
+            <h3 class="section-subheading text-muted">Aşağıdaki Hizmetler Şu Anda Aktif Değildir.</h3>
+        </div>
+        <div class="row text-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <span>
+                        <img class="mx-2 rounded-circle" style="width:120px;height:120px" src="@item.ResimUrl"
+
+                    </span>
+                    <h4 class="my-3">@item.Baslik </h4>
+                    <p class="text-muted">@item.Aciklama</p>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>

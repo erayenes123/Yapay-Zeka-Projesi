@@ -1,0 +1,36 @@
+﻿@model List<Yapay_Zeka_Projesi_Arayüzü.Models.Anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+
+<table class="table table-bordered table-hover" style="background-color:#191c25">
+
+    <tr>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Button Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+        
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>@item.Baslik</td>
+            <td>@item.Aciklama</td>
+            <td>@item.ButtonYazi</td>
+            <td><a class="btn btn-outline-danger" href="/Anasayfa/Sil/@item.Anasayfaid">Sil</a></td>
+            <td><a class="btn btn-outline-info" href="/Anasayfa/Update/@item.Anasayfaid">Güncelle</a></td>
+            
+        }
+    </tr>
+</table>
+<td><a class="btn btn-outline-success" style="background-color: #191c25" href="/Anasayfa/Add">Yeni Anasayfa Ekle</a></td>
+
+
+

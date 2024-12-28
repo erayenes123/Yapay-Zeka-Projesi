@@ -1,0 +1,36 @@
+﻿@model Yapay_Zeka_Projesi_Arayüzü.Models.Anasayfa
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Anasayfa Güncelleme Sayfası</h2>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.Anasayfaid)
+
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control",@style = "border-color:white"})
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control", @style = "border-color:white" })
+
+    <br />
+
+    <label>Buttonda Gösterilecek Yazı</label>
+    @Html.TextBoxFor(x => x.ButtonYazi, new { @class = "form-control", @style = "border-color:white" })
+    <br />
+
+   
+
+    <button class="btn btn-outline-success">Güncelle</button>
+
+
+
+
+</form>
+

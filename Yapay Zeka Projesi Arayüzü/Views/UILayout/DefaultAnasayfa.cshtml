@@ -1,0 +1,16 @@
+﻿@model List<Yapay_Zeka_Projesi_Arayüzü.Models.Anasayfa>
+
+
+
+
+<header class="masthead">
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <div class="masthead-subheading">@item.Baslik</div>
+            <div class="masthead-heading text-uppercase">@item.Aciklama</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">@item.ButtonYazi</a>
+        </div>
+    }
+
+</header>

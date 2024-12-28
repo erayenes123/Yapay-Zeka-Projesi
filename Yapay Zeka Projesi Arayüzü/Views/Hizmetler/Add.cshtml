@@ -1,0 +1,29 @@
+﻿@model Yapay_Zeka_Projesi_Arayüzü.Models.Hizmetler
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hizmet Ekleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label>Başlık</label>
+    <input type="text" class="form-control" name="Baslik" style="border-color:white " />
+
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Aciklama,5,1,new {@class = "form-control",@style= "border-color:white"})
+
+
+
+    <br />
+    <label>Resim Link</label>
+    <input type="text" class="form-control" name="ResimUrl" style="border-color:white " />
+
+    <br />
+    <button class="btn btn-outline-success">Ekle</button>
+
+</form>

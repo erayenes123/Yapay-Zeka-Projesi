@@ -1,0 +1,42 @@
+﻿@model List<Yapay_Zeka_Projesi_Arayüzü.Models.Analizler>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<table class="table table-bordered table-hover" style="background-color:#191c25">
+
+    <tr>
+        <th>Resim</th>
+        <th>Ad</th>
+        <th>İçindekiler</th>
+        <th>Miktar(gr)</th>
+        <th>Protein(gr)</th>
+        <th>Karbonhidrat(gr)</th>
+        <th>Kalori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img style="display:block; margin-left:auto;margin-right:auto;width:200px;height:150px" src="@item.ResimUrl"/></td>
+            <td>@item.Ad</td>
+            <td>@(item.ModelIcindekiler)</td>
+            <td>@(item.ModelMiktar + "gr")</td>
+            <td>@(item.ModelProtein + "gr")</td>
+            <td>@(item.ModelKarbonhidrat + "gr")</td>
+            <td>@(item.ModelKalori)</td>
+            <td><a class="btn btn-outline-danger" href="/Ornekler/Sil/@item.Ornekid">Sil</a></td>
+            <td><a class="btn btn-outline-info" href="/Ornekler/Update/@item.Ornekid">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<td><a class="btn btn-outline-success" style="background-color: #191c25" href="/Ornekler/Add">Yeni Ürün Ekle</a></td>
+
